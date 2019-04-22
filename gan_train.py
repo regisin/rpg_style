@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from fastai.vision import *
 from fastai.vision.gan import *
 
-folder = 'elf'
+folder = 'barbarian'
 path = Path('data')
 dest = path/folder
 
@@ -28,5 +28,5 @@ learn = GANLearner.wgan(data, generator, critic, switch_eval=False,
 
 learn.fit(30, 2e-4)
 
-# learn.gan_trainer.switch(gen_mode=True)
-# learn.show_results(ds_type=DatasetType.Train, rows=16, figsize=(8,8))
+learn.gan_trainer.switch(gen_mode=True)
+learn.show_results(ds_type=DatasetType.Train, rows=4, figsize=(8,8))
